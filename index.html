@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Presupuesto JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" type="" href="./CSS/styles.css">
+
+</head>
+<body onload="cargarPagina()">
+    <div class="flex flex-col  items-center cabecero text-center text-white p-4">
+        <div class="mb-4">
+            <h2 class="text-xl">Presupuesto disponible:</h2>
+            <p class="text-5xl" id="presupuesto">$2000.00</p>
+        </div>
+        <div class="flex  bg-sky-400 w-[370px] p-3 m-2 place-content-between">
+            <p class="tituloIngresos">Ingresos</p>
+            <div class="flex">
+                <div class="valorIngresos" id="ingresos">$2000.00</div>
+                <div class="w-10 ml-1">&nbsp</div>
+            </div>
+        </div>
+        <div class="flex bg-orange-400 w-[370px] p-3 m-2 place-content-between">
+            <p>Egresos</p>
+            <div class="flex">
+                <div class="valorEgresos" id="egresos">$2000.00</div>
+                <div class="w-10 text-xs ml-1 mt-1 bg-amber-400" id="porcentajeEgresos">36.00%</div>
+            </div>
+        </div>
+    </div>
+
+    <form action="" id="forma">
+        <div class="flex justify-center bg-gray-100 gap-6 p-2">
+            <select id="tipo" class="p-2 bg-white rounded-sm border border-gray-300" name="" >
+                <option value="ingreso">+</option>
+                <option value="egreso">-</option>
+            </select>
+            <input class="p-2 w-1/3  bg-white rounded-sm border border-gray-300" type="text" name="" id="descripcion" placeholder="Agregar Descripcion">
+            <input class="p-2 w-[8%]  bg-white rounded-sm border border-gray-300" type="number" id="valor" step="any" placeholder="Valor">
+            <ion-icon class="text-green-500 text-3xl p-2 cursor-pointer" name="add-circle-outline" onclick="agregarDato()"></ion-icon>
+        </div>
+    </form>
+
+    <div class="listsIngresosEgresos flex justify-center mt-8 gap-8">
+        <div class="listIngresos w-1/4">
+            <h2 class="text-sky-400 text-xl font-bold uppercase">Ingresos</h2>
+            <div id="listIngresosHTML">
+                
+            </div>
+        </div>
+        <div class="listEgresos w-1/4 p-2">
+            <h2 class="text-orange-400 text-xl font-bold uppercase">Egresos</h2>
+            <div id="listEgresosHTML">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/Dato.js"></script>
+    <script src="./JS/Ingreso.js"></script>
+    <script src="./JS/Egreso.js"></script>
+    <script src="./JS/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
